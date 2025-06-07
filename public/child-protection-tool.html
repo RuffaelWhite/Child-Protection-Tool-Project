@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Child Protection Tool - CSG</title>
+  <title>Child Protection Dashboard - CSG</title>
   <style>
     body {
       margin: 0;
@@ -14,7 +14,7 @@
       height: 100vh;
       overflow: hidden;
     }
-    /* 3D Sidebar */
+    /* Sidebar with 3D effect */
     #sidebar {
       width: 250px;
       background: #1e1e1e;
@@ -52,7 +52,6 @@
       overflow-y: auto;
       position: relative;
     }
-    /* Logo */
     #logo {
       width: 150px;
       margin-bottom: 2rem;
@@ -74,18 +73,37 @@
       font-size: 1.2rem;
       line-height: 1.5;
     }
+    /* AI Chatbot assistant */
+    #chatbot {
+      margin-top: 2rem;
+      background: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+      font-size: 1rem;
+    }
+    /* Alert System */
+    #alert-system {
+      margin-top: 2rem;
+      background: #ff3333;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(255, 51, 51, 0.6);
+      font-size: 1.2rem;
+      color: #fff;
+    }
   </style>
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
 </head>
 <body>
   <div id="sidebar">
     <img id="logo" src="logo.png" alt="CSG Logo" />
-    <h2>Child Protection</h2>
+    <h2>Child Protection Dashboard</h2>
     <nav>
       <a href="#message">Info</a>
       <a href="#map">Map</a>
-      <a href="index.html">Home</a>
-      <a href="tools.html">Tools</a>
+      <a href="#chatbot">AI Assistant</a>
+      <a href="#alert-system">Alerts</a>
       <a href="contact.html">Contact</a>
     </nav>
   </div>
@@ -93,16 +111,23 @@
     <section id="message">
       <h1>Protecting Children Online</h1>
       <p>
-        This tool helps raise awareness and provides resources to keep children safe online.
-        Please use internet safety practices and parental controls to protect young users.
+        This tool provides real-time alerts and AI-powered safety resources to keep children safe online.
       </p>
     </section>
     <section id="map"></section>
+    <section id="chatbot">
+      <h2>AI Safety Assistant</h2>
+      <p>The AI assistant provides guidance on cyber safety, parental controls, and security risks.</p>
+    </section>
+    <section id="alert-system">
+      <h2>Emergency Alerts</h2>
+      <p>Live updates on potential risks and emergency reports in online safety.</p>
+    </section>
   </div>
   <script>
     function initMap() {
       const mapOptions = {
-        center: { lat: 9.03, lng: 38.74 }, // Addis Ababa coordinates
+        center: { lat: 9.03, lng: 38.74 },
         zoom: 6,
         mapTypeId: 'satellite',
         tilt: 45
