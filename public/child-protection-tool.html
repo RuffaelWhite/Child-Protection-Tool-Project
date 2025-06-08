@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Child Protection Tool - CSG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #121212;
+      color: #e0e0e0;
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+    /* 3D Sidebar */
+    #sidebar {
+      width: 250px;
+      background: #1e1e1e;
+      box-shadow: 5px 0 15px rgba(0, 255, 153, 0.5);
+      transform-style: preserve-3d;
+      transform: perspective(800px) rotateY(-15deg);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #sidebar h2 {
+      color: #00ff99;
+      margin-bottom: 1rem;
+    }
+    #sidebar nav a {
+      color: #00ff99;
+      text-decoration: none;
+      margin: 0.5rem 0;
+      font-weight: 600;
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    #sidebar nav a:hover {
+      background-color: #00ff99;
+      color: #121212;
+    }
+    /* Main content */
+    #main {
+      flex: 1;
+      padding: 2rem;
+      overflow-y: auto;
+      position: relative;
+    }
+    /* Logo */
+    #logo {
+      width: 150px;
+      margin-bottom: 2rem;
+    }
+    /* Map container */
+    #map {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 153, 0.5);
+    }
+    /* Child protection message */
+    #message {
+      margin-top: 2rem;
+      background: #222;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 255, 153, 0.3);
+      font-size: 1.2rem;
+      line-height: 1.5;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY"></script>
+</head>
+<body>
+  <div id="sidebar">
+    <img id="logo" src="logo.png" alt="CSG Logo" />
+    <h2>Child Protection</h2>
+    <nav>
+      <a href="#message">Info</a>
+      <a href="#map">Map</a>
+      <a href="index.html">Home</a>
+      <a href="tools.html">Tools</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+  <div id="main">
+    <section id="message">
+      <h1>Protecting Children Online</h1>
+      <p>
+        This tool helps raise awareness and provides resources to keep children safe online.
+        Please use internet safety practices and parental controls to protect young users.
+      </p>
+    </section>
+    <section id="map"></section>
+  </div>
+  <script>
+    function initMap() {
+      const mapOptions = {
+        center: { lat: 9.03, lng: 38.74 }, // Addis Ababa coordinates
+        zoom: 6,
+        mapTypeId: 'satellite',
+        tilt: 45
+      };
+      const map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    }
+    window.onload = initMap;
+  </script>
+</body>
+</html>
